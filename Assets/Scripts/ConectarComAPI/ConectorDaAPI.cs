@@ -13,7 +13,7 @@ public class ConectorDaAPI : MonoBehaviour
     [SerializeField] private string IP;
     [SerializeField] private string PORT;
 
-    private static ConectarComAPI conector;
+    public static ConectarComAPI conector;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class ConectorDaAPI : MonoBehaviour
     }
 }
 
-class ConectarComAPI
+public class ConectarComAPI
 {
     private String PROTOCOLO = "http";
     private String IP;
@@ -140,7 +140,7 @@ class Status
     public int Hum = 0;
 }
 
-class StatusLed
+public class StatusLed
 {
     public bool status;
     public int R = 0;
@@ -156,7 +156,7 @@ class StatusLed
     }
 }
 
-class StatusDHT
+public class StatusDHT
 {
     public float Temp = 0;
     public int Hum = 0;

@@ -47,7 +47,7 @@ public class SistemaDeInteraçãoDeGrafico : MonoBehaviour
         display.color = cor;
         grafico.color = cor;
 
-        display.text = $"{Mathf.RoundToInt(novoValor)}{sufixo}";
+        display.text = $"{Mathf.RoundToInt(novoValor).ToString()}{sufixo}";
 
         grafico.fillAmount = map(novoValor, minumoValor, maximoValor, pontoMinimoDoGrafico, pontoMaximoDoGrafico);
     } 

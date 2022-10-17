@@ -24,7 +24,7 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
             graficoDeTemperatura.atualizarValor(statusDht.Temp);
             graficoDeHumidade.atualizarValor(statusDht.Hum);
             
-            Task.Delay(1000).Wait();
+            await Task.Delay(1000);
         }
     }
 }

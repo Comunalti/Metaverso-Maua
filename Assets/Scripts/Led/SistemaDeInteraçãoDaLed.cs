@@ -14,11 +14,11 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
     // Start is called before the first frame update
     async void Start()
     {
-       StatusLed infosLed  = await ConectorDaAPI.conector.PegarInfosLed();
+       await ConectorDaAPI.conector.SetarStatusLed(true, 255,255, 255);
 
-       componenteDeSliderR.value = infosLed.R;
-       componenteDeSliderG.value = infosLed.G;
-       componenteDeSliderB.value = infosLed.B;
+       componenteDeSliderR.value = 255;
+       componenteDeSliderG.value = 255;
+       componenteDeSliderB.value = 255;
     }
 
     public async void trocarValoresLed()

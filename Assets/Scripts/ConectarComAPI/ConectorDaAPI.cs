@@ -90,7 +90,7 @@ public class ConectarComAPI
     {
         Status statusRequeste = await RequesteGetDaAPI("led");
 
-        return new StatusLed(statusRequeste.status,statusRequeste.R,statusRequeste.G,statusRequeste.B);
+        return new StatusLed(statusRequeste.status,statusRequeste.r,statusRequeste.g,statusRequeste.b);
         
         // Retorna StatusLed
         //
@@ -106,11 +106,11 @@ public class ConectarComAPI
     {
         Status statusLed = new Status();
         statusLed.status = status;
-        statusLed.R = R;
-        statusLed.G = G;
-        statusLed.B = B;
+        statusLed.r = R;
+        statusLed.g = G;
+        statusLed.b = B;
 
-        return await RequestePostDaAPI("led", statusLed);
+        return await RequestePostDaAPI("led/soft", statusLed);
         
         // Retorna Bool Se Deu Certo
     }
@@ -133,9 +133,9 @@ public class ConectarComAPI
 class Status
 {
     public bool status;
-    public int R = 0;
-    public int G = 0;
-    public int B = 0;
+    public int r = 0;
+    public int g = 0;
+    public int b = 0;
     public float Temp = 0;
     public int Hum = 0;
 }

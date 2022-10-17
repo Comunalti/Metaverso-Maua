@@ -21,23 +21,14 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
        componenteDeSliderB.value = infosLed.B;
     }
 
-    private async void trocarValoresLed(int R, int G,int B)
+    public async void trocarValoresLed()
     {
-        await ConectorDaAPI.conector.SetarStatusLed(true, R, G, B);
-    }
-
-    public void trocarR(int valor)
-    {
-        trocarValoresLed(valor,(int) componenteDeSliderG.value,(int) componenteDeSliderB.value);
-    }
-
-    public void trocarB(int valor)
-    {
-        trocarValoresLed((int) componenteDeSliderR.value,valor,(int) componenteDeSliderB.value);
-    }
-
-    public void trocarG(int valor)
-    {
-        trocarValoresLed((int) componenteDeSliderR.value,(int) componenteDeSliderG.value,valor);
+        foreach (Light luz in componentesDeLed)
+        {
+            luz.color = new Color(componenteDeSliderR.value/255, componenteDeSliderG.value/255,
+                componenteDeSliderB.value/255);
+        }
+        
+        await ConectorDaAPI.conector.SetarStatusLed(true, (int) componenteDeSliderR.value,(int) componenteDeSliderG.value, (int) componenteDeSliderB.value);
     }
 }

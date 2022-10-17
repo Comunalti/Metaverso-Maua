@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,17 +7,11 @@ using UnityEngine;
 
 public class SistemaDeInteraçãoDoDHT : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro displayDeTemperatura;
-    [SerializeField] private TextMeshPro displayDeHumidade;
+    [SerializeField] private SistemaDeInteraçãoDeGrafico graficoDeTemperatura;
+    [SerializeField] private SistemaDeInteraçãoDeGrafico graficoDeHumidade;
 
-    // Start is called before the first frame update
-    async void Start()
+    private void Start()
     {
-        StatusDHT statusDht = await ConectorDaAPI.conector.PegarInfosDht();
-
-        displayDeTemperatura.text = $"{statusDht.Temp}°";
-        displayDeHumidade.text = $"{statusDht.Hum}%";
-
         updateDosDisplay();
     }
 
@@ -24,12 +19,12 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
     {
         while (Application.isPlaying)
         {
-            Task.Delay(1000).Wait();
-            
             StatusDHT statusDht = await ConectorDaAPI.conector.PegarInfosDht();
-
-            displayDeTemperatura.text = $"{statusDht.Temp}°";
-            displayDeHumidade.text = $"{statusDht.Hum}%";
+        
+            graficoDeTemperatura.atualizarValor(statusDht.Temp);
+            graficoDeHumidade.atualizarValor(statusDht.Hum);
+            
+            Task.Delay(1000).Wait();
         }
     }
 }

@@ -36,13 +36,19 @@ public class EfeitosDoSkybox : MonoBehaviour
         Color corInicial = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         Color corFinal = new Color(1f, 0.5f, 0f, 0.5f);
         float t = 0f;
-
         while (t <= 1f)
         {
             t += 0.01f;
             skybox.SetColor("_Tint",Color.Lerp(corInicial, corFinal, t));
-            skybox.SetFloat("_Exposure",Mathf.Lerp(1,2.5f,t));
+            // skybox.SetFloat("_Exposure",Mathf.Lerp(1,2.5f,t));
             await Task.Delay(10);
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        skybox.SetColor("_Tint",new Color(0.5f, 0.5f, 0.5f, 0.5f));
+        skybox.SetFloat("_Rotation",222f);
+        skybox.SetFloat("_Exposure",1);
     }
 }

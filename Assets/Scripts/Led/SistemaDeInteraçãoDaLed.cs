@@ -15,10 +15,6 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
     async void Start()
     {
        await ConectorDaAPI.conector.SetarStatusLed(true, 255,255, 255);
-
-       componenteDeSliderR.value = 255;
-       componenteDeSliderG.value = 255;
-       componenteDeSliderB.value = 255;
     }
 
     public async void trocarValoresLed()

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DesativarMenuDeComeco : MonoBehaviour
+public class FazerAparecerMapa : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    
+    [SerializeField] private GameObject mapa;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +17,8 @@ public class DesativarMenuDeComeco : MonoBehaviour
         
     }
 
-    public void desativarMenu()
+    public void fazerAparecerMapa()
     {
-        _animator.enabled = true;
-        gameObject.SetActive(false);
+        mapa.SetActive(true);
     }
 }

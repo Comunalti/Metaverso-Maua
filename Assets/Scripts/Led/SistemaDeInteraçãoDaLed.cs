@@ -14,7 +14,7 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
     // Start is called before the first frame update
     async void Start()
     {
-       await ConectorDaAPI.conector.SetarStatusLed(true, 255,255, 255);
+       await ConectorDaAPI.conector.SetarStatusLed(true, 0,0, 0);
     }
 
     public async void trocarValoresLed()

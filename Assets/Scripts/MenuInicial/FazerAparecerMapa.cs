@@ -5,6 +5,8 @@ using UnityEngine;
 public class FazerAparecerMapa : MonoBehaviour
 {
     [SerializeField] private GameObject mapa;
+    [SerializeField] private GameObject menuFinal;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,15 @@ public class FazerAparecerMapa : MonoBehaviour
     public void fazerAparecerMapa()
     {
         mapa.SetActive(true);
+    }
+
+    public void fazerDesaparecerMapa()
+    {
+        mapa.SetActive(false);
+    }
+
+    public void fazerAparecerMenu()
+    {
+        menuFinal.SetActive(true);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DesativarMenuDeComeco : MonoBehaviour
 {
@@ -27,5 +28,10 @@ public class DesativarMenuDeComeco : MonoBehaviour
         {
             controle.SetActive(false);
         }
+    }
+
+    public void recomecarExperiencia()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -12,8 +12,12 @@ public class FalasRobo : MonoBehaviour
     [SerializeField] private AudioClip backInBlack;
     [SerializeField] private AudioClip cassetteQuebrada;
     
+    [SerializeField] private AudioSource somDeAmbiente;
+    [SerializeField] private AudioClip explosao;
     
     [SerializeField] private List<GameObject> controles;
+
+    [SerializeField] private Animator _animator;
 
     public void darPlayNoAudio(string nomeDoAudio)
     {
@@ -49,16 +53,6 @@ public class FalasRobo : MonoBehaviour
             case "Frase10":
                 audio.clip = falas[9];
                 break;
-            case "CassetteInicio":
-                caixaDeSom.clip = cassetteInicio;
-                caixaDeSom.Play();
-                break;
-            case "BackInBlack":
-                caixaDeSom.clip = backInBlack;
-                break;
-            case "CassetteQuebrada":
-                caixaDeSom.clip = cassetteQuebrada;
-                break;
         }
         
         audio.Play();
@@ -88,5 +82,18 @@ public class FalasRobo : MonoBehaviour
         {
             controle.SetActive(true);
         }
+    }
+
+    public void darPlayExplosao()
+    {
+        somDeAmbiente.clip = explosao;
+        somDeAmbiente.loop = false;
+        somDeAmbiente.volume = 0.8f;
+        somDeAmbiente.Play();
+    }
+
+    public void fecharOsOlhos()
+    {
+        _animator.SetTrigger("FecharOsOlhos");
     }
 }

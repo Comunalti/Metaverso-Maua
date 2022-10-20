@@ -19,11 +19,21 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
 
     [SerializeField] private EfeitosDoSkybox _efeitosDoSkybox;
 
+    [SerializeField] private Animator _animator;
+
+    [SerializeField] private bool debuging = true;
+
     private async void Start()
     {
         updateDosDisplay();
-        // await Task.Delay(10000);
-        // catastrofe();
+
+        if (debuging)
+        {
+            await Task.Delay(55000);
+            graficoDeTemperatura.atualizarValor(95);
+            graficoDeHumidade.atualizarValor(5);
+            catastrofe();
+        }
     }
 
     async void updateDosDisplay()
@@ -37,6 +47,8 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
 
             if (statusDht.Hum > 95)
             {
+                graficoDeTemperatura.atualizarValor(95);
+                graficoDeHumidade.atualizarValor(5);
                 catastrofe();
                 break;
             }
@@ -50,6 +62,7 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
         setarLuzes();
         acionarEOcilarPaineisDePerigo();
         _efeitosDoSkybox.DeixarFundoLaranja();
+        _animator.SetTrigger("Catastrofe");
     }
 
     async void setarLuzes()

@@ -15,8 +15,6 @@ public class FalasRobo : MonoBehaviour
     
     [SerializeField] private List<GameObject> controles;
 
-    [SerializeField] private List<GameObject> monitores;
-
     public void darPlayNoAudio(string nomeDoAudio)
     {
         switch (nomeDoAudio)
@@ -82,15 +80,6 @@ public class FalasRobo : MonoBehaviour
         }
         
         caixaDeSom.Play();
-    }
-    
-
-    public void ligarMonitores()
-    {
-        foreach (GameObject monitor in monitores)
-        {
-            monitor.SetActive(true);
-        }
     }
 
     public void reativarControles()

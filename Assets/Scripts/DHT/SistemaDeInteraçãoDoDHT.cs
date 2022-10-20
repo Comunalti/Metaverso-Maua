@@ -22,8 +22,8 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
     private async void Start()
     {
         updateDosDisplay();
-        await Task.Delay(10000);
-        catastrofe();
+        // await Task.Delay(10000);
+        // catastrofe();
     }
 
     async void updateDosDisplay()

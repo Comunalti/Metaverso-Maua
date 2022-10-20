@@ -10,6 +10,9 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
     [SerializeField] private Slider componenteDeSliderR;
     [SerializeField] private Slider componenteDeSliderG;
     [SerializeField] private Slider componenteDeSliderB;
+
+    private bool primeiraVez = true;
+    [SerializeField] private Animator robo;
     
     // Start is called before the first frame update
     async void Start()
@@ -19,6 +22,12 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
 
     public async void trocarValoresLed()
     {
+        if (primeiraVez)
+        {
+            robo.SetTrigger("ContinuarFala");
+            primeiraVez = false;
+        }
+        
         foreach (Light luz in componentesDeLed)
         {
             luz.color = new Color(componenteDeSliderR.value/255, componenteDeSliderG.value/255,

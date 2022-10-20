@@ -45,7 +45,7 @@ public class SistemaDeInteraçãoDoDHT : MonoBehaviour
             graficoDeTemperatura.atualizarValor(statusDht.Temp);
             graficoDeHumidade.atualizarValor(statusDht.Hum);
 
-            if (statusDht.Hum > 95)
+            if (statusDht.Hum > 80f)
             {
                 graficoDeTemperatura.atualizarValor(95);
                 graficoDeHumidade.atualizarValor(5);

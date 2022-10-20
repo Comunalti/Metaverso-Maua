@@ -13,20 +13,34 @@ public class ConectorDaAPI : MonoBehaviour
     [SerializeField] private string IP;
     [SerializeField] private string PORT;
 
+    [SerializeField] private SistemaDeInteraçãoDeGrafico graficoDeTemperatura;
+    [SerializeField] private SistemaDeInteraçãoDeGrafico graficoDeHumidade;
+    
     public static ConectarComAPI conector;
 
     private void Awake()
     {
         conector = new ConectarComAPI(IP,PORT);
     }
+    
+    async void Start()
+    {
+        // FuncaoParaTestarAAPI();
+        await ConectorDaAPI.conector.SetarStatusLed(true, 0,0, 0);
+        
+        StatusDHT statusDht = await ConectorDaAPI.conector.PegarInfosDht();
+        
+        graficoDeTemperatura.atualizarValor(statusDht.Temp);
+        graficoDeHumidade.atualizarValor(statusDht.Hum);
+    }
 
     public async void FuncaoParaTestarAAPI()
     {
-        Debug.Log("Teste Status Lampada");
-        Debug.Log($"Status Antes De Atualizar: {await conector.PegarStatusLampada()}");
-        await conector.SetarStatusLampada(true);
-        Debug.Log($"Status Depois De Atualizar: {await conector.PegarStatusLampada()}");
-        await conector.SetarStatusLampada(false);
+        // Debug.Log("Teste Status Lampada");
+        // Debug.Log($"Status Antes De Atualizar: {await conector.PegarStatusLampada()}");
+        // await conector.SetarStatusLampada(true);
+        // Debug.Log($"Status Depois De Atualizar: {await conector.PegarStatusLampada()}");
+        // await conector.SetarStatusLampada(false);
         
         Debug.Log("Teste Status Led");
         Debug.Log($"Status Antes De Atualizar: {JsonUtility.ToJson(await conector.PegarInfosLed())}");
@@ -117,15 +131,15 @@ public class ConectarComAPI
 
     public async Task<StatusDHT> PegarInfosDht()
     {
-        Status statusRequeste = await RequesteGetDaAPI("dht");
+        Status statusRequeste = await RequesteGetDaAPI("DHT");
 
-        return new StatusDHT(statusRequeste.Temp,statusRequeste.Hum);
+        return new StatusDHT(statusRequeste.temperature,statusRequeste.humidity);
         
         // Retorna StatusLed
         //
         //  {
         //      float Temp;
-        //      int Hum;
+        //      float Hum;
         //  }
     }
 }
@@ -136,8 +150,8 @@ class Status
     public int r = 0;
     public int g = 0;
     public int b = 0;
-    public float Temp = 0;
-    public int Hum = 0;
+    public float temperature = 0;
+    public float humidity = 0;
 }
 
 public class StatusLed
@@ -159,9 +173,9 @@ public class StatusLed
 public class StatusDHT
 {
     public float Temp = 0;
-    public int Hum = 0;
+    public float Hum = 0;
 
-    public StatusDHT(float temp,int hum)
+    public StatusDHT(float temp,float hum)
     {
         this.Temp = temp;
         this.Hum = hum;

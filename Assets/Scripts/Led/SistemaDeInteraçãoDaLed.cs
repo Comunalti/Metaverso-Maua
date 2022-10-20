@@ -13,16 +13,10 @@ public class SistemaDeInteraçãoDaLed : MonoBehaviour
 
     private bool primeiraVez = true;
     [SerializeField] private Animator robo;
-    
-    // Start is called before the first frame update
-    async void Start()
-    {
-       await ConectorDaAPI.conector.SetarStatusLed(true, 0,0, 0);
-    }
 
     public async void trocarValoresLed()
     {
-        if (primeiraVez)
+        if (primeiraVez && robo != null)
         {
             robo.SetTrigger("ContinuarFala");
             primeiraVez = false;

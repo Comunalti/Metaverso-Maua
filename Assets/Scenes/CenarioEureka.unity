@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0012502304, g: 0.0015132513, b: 0.0041801655, a: 1}
+  m_IndirectSpecularColor: {r: 0.0011912258, g: 0.0015163285, b: 0.0041575343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13302,7 +13302,7 @@ MonoBehaviour:
   - {fileID: 186490371}
   _efeitosDoSkybox: {fileID: 394532359}
   _animator: {fileID: 1345981416}
-  debuging: 1
+  debuging: 0
 --- !u!114 &1152647974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21153,8 +21153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e22b4f2a09792a4c807ec5db3afa26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IP: 192.168.15.139
+  IP: 192.168.112.127
   PORT: 9152
+  graficoDeTemperatura: {fileID: 1063547416}
+  graficoDeHumidade: {fileID: 524558016}
 --- !u!4 &1879168806
 Transform:
   m_ObjectHideFlags: 0

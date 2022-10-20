@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e22b4f2a09792a4c807ec5db3afa26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IP: 192.168.15.139
+  IP: 192.168.112.127
   PORT: 9152
 --- !u!4 &121595383
 Transform:
@@ -2904,6 +2904,7 @@ MonoBehaviour:
   componenteDeSliderR: {fileID: 571601610}
   componenteDeSliderG: {fileID: 793662704}
   componenteDeSliderB: {fileID: 1816633691}
+  robo: {fileID: 0}
 --- !u!114 &1232602821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3414,8 +3415,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a814eab5b4210647af22ec5b76ded25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayDeTemperatura: {fileID: 1286946117}
-  displayDeHumidade: {fileID: 892257908}
+  graficoDeTemperatura: {fileID: 0}
+  graficoDeHumidade: {fileID: 0}
+  paineisDePerigo: []
+  somDeAlerta: {fileID: 0}
+  slidersUILed: []
+  luzes: []
+  _efeitosDoSkybox: {fileID: 0}
+  _animator: {fileID: 0}
+  debuging: 1
 --- !u!1 &1563831140
 GameObject:
   m_ObjectHideFlags: 0

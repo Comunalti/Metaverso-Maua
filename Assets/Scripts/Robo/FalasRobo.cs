@@ -94,7 +94,7 @@ public class FalasRobo : MonoBehaviour
     {
         somDeAmbiente.clip = explosao;
         somDeAmbiente.loop = false;
-        somDeAmbiente.volume = 0.8f;
+        somDeAmbiente.volume = 1f;
         somDeAmbiente.Play();
     }
 

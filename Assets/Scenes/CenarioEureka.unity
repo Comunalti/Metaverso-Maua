@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0011912258, g: 0.0015163285, b: 0.0041575343, a: 1}
+  m_IndirectSpecularColor: {r: 0.0012502304, g: 0.0015132513, b: 0.0041801655, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5836,7 +5836,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6246,7 +6246,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12733,7 +12733,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8e53ad1234665094896793afed532bea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13302,7 +13302,7 @@ MonoBehaviour:
   - {fileID: 186490371}
   _efeitosDoSkybox: {fileID: 394532359}
   _animator: {fileID: 1345981416}
-  debuging: 0
+  debuging: 1
 --- !u!114 &1152647974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15181,7 +15181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1345981414
 Transform:
   m_ObjectHideFlags: 0
@@ -15364,6 +15364,7 @@ MonoBehaviour:
   caixaDeSom: {fileID: 483993736}
   cassetteInicio: {fileID: 8300000, guid: 438f4ad2783de00419a1af25325d0312, type: 3}
   backInBlack: {fileID: 8300000, guid: dd4c297a671f97443823a4d7ebb27274, type: 3}
+  musicaGratis: {fileID: 8300000, guid: e2fe506f27b91584889b800cf6b47b39, type: 3}
   cassetteQuebrada: {fileID: 8300000, guid: 06f7ee4e663952541ab03a9243c4095d, type: 3}
   somDeAmbiente: {fileID: 1106792034}
   explosao: {fileID: 8300000, guid: 7b699939581d4224b89f9f6bbfc58845, type: 3}
@@ -16137,7 +16138,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19314,7 +19315,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19726,7 +19727,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -22757,7 +22758,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -23922,7 +23923,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 082c189349d3be544943211a81505218, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.225
+  m_Volume: 0.3
   m_Pitch: 0.67
   Loop: 1
   Mute: 0

@@ -10,6 +10,7 @@ public class FalasRobo : MonoBehaviour
     [SerializeField] private AudioSource caixaDeSom;
     [SerializeField] private AudioClip cassetteInicio;
     [SerializeField] private AudioClip backInBlack;
+    [SerializeField] private AudioClip musicaGratis;
     [SerializeField] private AudioClip cassetteQuebrada;
     
     [SerializeField] private AudioSource somDeAmbiente;
@@ -68,8 +69,13 @@ public class FalasRobo : MonoBehaviour
             case "BackInBlack":
                 caixaDeSom.clip = backInBlack;
                 break;
+            case "MusicaGratis":
+                caixaDeSom.clip = musicaGratis;
+                caixaDeSom.volume = 0.1f;
+                break;
             case "CassetteQuebrada":
                 caixaDeSom.clip = cassetteQuebrada;
+                caixaDeSom.volume = 0.8f;
                 break;
         }
         
